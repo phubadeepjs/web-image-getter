@@ -22,7 +22,7 @@ A Node.js script that downloads images from URLs listed in a CSV file using Play
 - Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/phubadeepjs/web-image-getter.git)
 cd grafana-getter
 ```
 
