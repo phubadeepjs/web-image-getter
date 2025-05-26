@@ -1,0 +1,15 @@
+{
+  "name": "grafana-getter",
+  "version": "1.0.0",
+  "description": "Script to download images from URLs in CSV",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.3",
+    "node-fetch": "^3.3.2",
+    "playwright": "^1.42.1",
+    "sharp": "^0.34.2"
+  }
+}
