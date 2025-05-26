@@ -44,13 +44,13 @@ yarn install
 - Prepare your URLs:
 
 - Edit `urls.csv` file
-- Add one URL per line
+- Add Name and URL per line
 - No headers needed
 - Example:
 
 ```text
-https://example.com/image1.jpg
-https://example.com/image2.png
+Page1,https://example.com/image1.jpg
+Page2,https://example.com/image2.png
 ```
 
 Configure cropping (optional):
@@ -78,14 +78,14 @@ The script will:
 4. Take a full-page screenshot
 5. Apply cropping if configured
 6. Save the processed image to the `result` folder
-7. Name files sequentially as `image_1.png`, `image_2.png`, etc.
+7. Name files sequentially as `Page1.png`, `Page2.png`, etc.
 
 ## Output
 
 - Screenshots are saved in the `result/` directory
 - Each image is saved as a full-page screenshot
 - Images are automatically cropped if cropping is enabled
-- Files are named sequentially: `image_1.png`, `image_2.png`, etc.
+- Files are named sequentially: `Page1.png`, `Page2.png`, etc.
 
 ## Troubleshooting
 

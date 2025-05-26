@@ -9,17 +9,18 @@ if (!fs.existsSync(resultDir)) {
   fs.mkdirSync(resultDir);
 }
 
-async function downloadImage(page, url, index) {
+async function downloadImage(page, url, name) {
   try {
     await page.goto(url, { waitUntil: "networkidle" });
 
-    const screenshotPath = path.join(resultDir, `image_${index}.png`);
+    const screenshotPath = path.join(resultDir, `${name}_full.png`);
     await page.screenshot({ path: screenshotPath, fullPage: true });
 
-    const croppedPath = path.join(resultDir, `image_${index}_cropped.png`);
-    await sharp(screenshotPath)
-      .trim()
-      .toFile(croppedPath);
+    const croppedPath = path.join(resultDir, `${name}.png`);
+    await sharp(screenshotPath).trim().toFile(croppedPath);
+
+    // delete screenshot
+    fs.unlinkSync(screenshotPath);
 
     console.log(
       `Successfully downloaded and cropped image from ${url} to ${croppedPath}`
@@ -69,9 +70,10 @@ async function main() {
     const page = pages.length ? pages[0] : await context.newPage();
 
     for (let i = 0; i < records.length; i++) {
-      const url = records[i][0];
+      const name = records[i][0];
+      const url = records[i][1];
       console.log(`Processing URL ${i + 1}/${records.length}: ${url}`);
-      await downloadImage(page, url, i + 1);
+      await downloadImage(page, url, name);
     }
 
     await context.close();
