@@ -1,4 +1,4 @@
-# Grafana Image Downloader
+# Web image getter
 
 A Node.js script that downloads images from URLs listed in a CSV file using Playwright and Chrome's remote debugging capabilities. The script takes screenshots of web pages and saves them to a local directory.
 
@@ -23,7 +23,7 @@ A Node.js script that downloads images from URLs listed in a CSV file using Play
 
 ```bash
 git clone [<repository-url>](https://github.com/phubadeepjs/web-image-getter.git)
-cd grafana-getter
+cd web-image-getter
 ```
 
 - Install dependencies:
